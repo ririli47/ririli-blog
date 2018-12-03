@@ -29,3 +29,6 @@ query posts {
 export default {}
 </script>
 
+<style>
+  
+</style>

@@ -1,15 +1,19 @@
 <template>
-  <div class="layout">
+  <div>
     <header class="header">
-      <strong>
-        <g-link :to="{ name: 'home' }">Ririli's Blog</g-link>
-      </strong>
+        <g-link :to="{ name: 'home' }">
+          <g-image alt="Example image" src="~/title.png" class="title-img" />
+        </g-link>
       <nav class="nav">
         <g-link class="nav__link" :to="{ name: 'home' }">Home</g-link>
         <g-link class="nav__link" :to="{ name: 'about' }">About</g-link>
       </nav>
     </header>
-    <slot/>
+    <main class="layout">
+      <slot/>
+    </main>
+    <footer class="footer">
+    </footer>
   </div>
 </template>
 
@@ -22,7 +26,7 @@ body {
 }
 
 .layout {
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
@@ -34,9 +38,18 @@ body {
   align-items: center;
   margin-bottom: 20px;
   height: 80px;
+  background-color: #333333;
+}
+
+.header a {
+  color: white;
 }
 
 .nav__link {
   margin-left: 20px;
+}
+
+.title-img {
+  width: 200px;
 }
 </style>
