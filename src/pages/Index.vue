@@ -1,13 +1,23 @@
 <template>
   <Layout>
-    <!--<g-image alt="Example image" src="~/favicon.png" width="135" />-->
-    <h1>Hello, world!</h1>
-    <div>
-      <h2>Blog Posts</h2>
-      <div v-for="item in $page.allPost.edges">
-        <g-link :to="item.node.path">{{ item.node.title }}</g-link>
+    <div slot="main">
+      <h1>Blog Posts</h1>
+      <div v-for = "item in $page.allPost.edges">
+        <h2>
+          <g-link :to="item.node.path">{{ item.node.title }}</g-link>
+        </h2>
+        <dl>
+          <dt>post date</dt><dd>post tag</dd>
+        </dl>
+        <img src="" alt="post image">
+        <p>description</p>
       </div>
     </div>
+
+    <div slot="side">
+      <h1>Blog Posts</h1>
+    </div>
+
   </Layout>
 </template>
 
@@ -26,9 +36,19 @@ query posts {
 </page-query>
 
 <script>
-export default {}
+  export default {}
 </script>
 
 <style>
-  
+  h2 {
+    border-bottom: inset 10px #01bbdd;
+  }
+
+  dt{
+    float: left;
+  }
+
+  dd{
+    margin-left: 80px;
+  }
 </style>
