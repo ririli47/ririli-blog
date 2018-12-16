@@ -91,4 +91,16 @@ body {
 .title-img {
   width: 200px;
 }
+
+@media screen and (max-width:1200px){
+  .title-img {
+    margin-left: 20px;
+  }
+
+  .nav {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+}
 </style>
