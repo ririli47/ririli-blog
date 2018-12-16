@@ -1,13 +1,19 @@
 <template>
-  <Layout>
-    <div v-html="$page.post.content"/>
-  </Layout>
+    <Layout>
+        <div slot="main">
+            <div v-html="$page.post.title"/>
+            <div v-html="$page.post.content"/>
+            <div v-html="$page.post.date"/>
+        </div>
+    </Layout>
 </template>
 
 <page-query>
 query MarkdownPost ($path: String!) {
   post (path: $path) {
-    content
+    title
+    content  
+    date
   }
 }
 </page-query>

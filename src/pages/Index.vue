@@ -2,24 +2,17 @@
   <Layout>
     <div slot="main">
       <h1>Blog Posts</h1>
-      <div v-for="item in $page.allPost.edges" :key="item.path">
+      <div v-for="item in $page.allPost.edges">
         <h2>
           <g-link :to="item.node.path">{{ item.node.title }}</g-link>
         </h2>
         <dl>
-          <dt>post date</dt><dd>post tag</dd>
+          <dt>{{ item.node.date }}</dt><dd>post tag</dd>
         </dl>
-        <img src="../frozen.jpg" alt="post image">
+        <img src="../img/frozen.jpg" alt="post image">
         <p>description</p>
       </div>
     </div>
-
-    <div slot="side">
-      <h1>About me</h1>
-      <img src="../usapi.png" alt="usapi">
-      <h2>Naoya Fukuhara</h2>
-    </div>
-
   </Layout>
 </template>
 
@@ -31,6 +24,7 @@ query posts {
         path
         title
         content
+        date
       }
     }
   }
@@ -52,7 +46,7 @@ query posts {
   }
 
   dd{
-    margin-left: 80px;
+    margin-left: 200px;
   }
 
   img {

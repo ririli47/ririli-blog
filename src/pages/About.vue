@@ -10,3 +10,10 @@
 <script>
 export default {}
 </script>
+
+<style>
+  h2 {
+    border-bottom: inset 10px #01bbdd;
+    margin-right: 10%;
+  }
+</style>

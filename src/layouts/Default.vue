@@ -4,7 +4,7 @@
       <div class="header-background">
         <div class="header-wrap">
           <g-link :to="{ name: 'home' }">
-            <g-image alt="Example image" src="~/title.png" class="title-img" />
+            <g-image alt="Example image" src="~/img/title.png" class="title-img" />
           </g-link>
         </div>
       </div>
@@ -18,7 +18,9 @@
         <slot name="main"/>
       </div>
       <div class="Layout-part-side">
-        <slot name="side"/>
+        <h1>About me</h1>
+        <img src="../img/usapi.png" alt="usapi">
+        <h2>Naoya Fukuhara</h2>
       </div>
     </main>
     <footer class="footer">
@@ -91,6 +93,11 @@ body {
 .title-img {
   width: 200px;
 }
+
+img {
+  width: 85%;
+}
+
 
 @media screen and (max-width:1200px){
   .title-img {
