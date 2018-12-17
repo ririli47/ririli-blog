@@ -4,6 +4,7 @@
             <div v-html="$page.post.title"/>
             <div v-html="$page.post.content"/>
             <div v-html="$page.post.date"/>
+            <div v-html="$page.post.description"/>
         </div>
     </Layout>
 </template>
@@ -14,6 +15,7 @@ query MarkdownPost ($path: String!) {
     title
     content  
     date
+    description
   }
 }
 </page-query>
