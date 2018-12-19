@@ -2,7 +2,7 @@
   <Layout>
     <div slot="main">
       <h1>Blog Posts</h1>
-      <div v-for="item in $page.allBlogPost.edges">
+      <div v-for="item in $page.allBlogPost.edges" :key="item.path">
         <h2>
           <g-link :to="item.node.path">{{ item.node.title }}</g-link>
         </h2>
