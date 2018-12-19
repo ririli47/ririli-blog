@@ -2,7 +2,7 @@
   <Layout>
     <div slot="main">
       <h1>Blog Posts</h1>
-      <div v-for="item in $page.allPost.edges">
+      <div v-for="item in $page.allBlogPost.edges">
         <h2>
           <g-link :to="item.node.path">{{ item.node.title }}</g-link>
         </h2>
@@ -18,13 +18,13 @@
 
 <page-query>
 query posts {
-  allPost{
+  allBlogPost {
     edges {
       node {
         path
         title
         content
-        date
+        date(format:"YYYY年MM月DD日 HH:mm:ss")
       }
     }
   }
