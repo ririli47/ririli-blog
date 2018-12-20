@@ -9,33 +9,36 @@
         <dl>
           <dt>{{ item.node.date }}</dt><dd>post tag</dd>
         </dl>
-        <img src="../img/frozen.jpg" alt="post image">
-        <p>description</p>
+        <!-- <img src="../img/frozen.jpg" alt="post image"> -->
+        <p>{{ item.node.fields.description }}</p>
       </div>
     </div>
   </Layout>
 </template>
 
 <page-query>
-query posts {
-  allBlogPost {
-    edges {
-      node {
-        path
-        title
-        content
-        date(format:"YYYY年MM月DD日 HH:mm:ss")
+  query Home ($page: Int) {
+    allBlogPost (page: $page) {
+      edges {
+        node {
+          _id
+          title
+          date (format: "YYYY年MM月DD日 HH:mm:ss")
+          fields {
+            description
+          }
+          path
+        }
       }
     }
   }
-}
 </page-query>
 
 <script>
   export default {}
 </script>
 
-<style>
+<style scoped>
   h2 {
     border-bottom: inset 10px #01bbdd;
     margin-right: 10%;
