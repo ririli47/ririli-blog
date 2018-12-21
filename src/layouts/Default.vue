@@ -4,7 +4,7 @@
       <div class="header-background">
         <div class="header-wrap">
           <g-link :to="{ name: 'home' }">
-            <g-image alt="Example image" src="~/img/title.png" class="title-img" />
+            <g-image alt="Example image" src="../../assets/img/title.png" class="title-img"/>
           </g-link>
         </div>
       </div>
@@ -19,7 +19,7 @@
       </div>
       <div class="Layout-part-side">
         <h1>About me</h1>
-        <img src="../img/usapi.png" alt="usapi">
+        <g-image src="../../assets/img/usapi.png" alt="usapi"/>
         <h2>Naoya Fukuhara</h2>
       </div>
     </main>

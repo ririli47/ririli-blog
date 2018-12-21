@@ -9,7 +9,7 @@
         <dl>
           <dt>{{ item.node.date }}</dt><dd>post tag</dd>
         </dl>
-        <!-- <img src="../img/frozen.jpg" alt="post image"> -->
+        <!-- <g-image :src = "item.node.image"/> -->
         <p>{{ item.node.fields.description }}</p>
       </div>
     </div>
@@ -26,6 +26,7 @@
           date (format: "YYYY年MM月DD日 HH:mm:ss")
           fields {
             description
+            image
           }
           path
         }
