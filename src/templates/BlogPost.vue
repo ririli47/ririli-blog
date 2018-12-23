@@ -5,7 +5,7 @@
       <dl>
         <dt>{{ $page.blogPost.date }}</dt><dd></dd>
       </dl>
-      <img :src="$page.blogPost.fields.image"/>
+      <img :src="$page.blogPost.fields.image.src"/>
       <div class="content" v-html="$page.blogPost.content" />
     </div>
   </Layout>
@@ -19,6 +19,7 @@ query MarkdownPost ($path: String!) {
     content
     fields {
       image
+      tags
     }
   }
 }

@@ -2,15 +2,16 @@
   <Layout>
     <div slot="main">
       <h1>Blog Posts</h1>
-      <div v-for="item in $page.allBlogPost.edges" :key="item.path">
+      <div v-for="item in $page.allBlogPost.edges" :key="item.path" class="post">
         <h2>
           <g-link :to="item.node.path">{{ item.node.title }}</g-link>
         </h2>
         <dl>
-          <dt>{{ item.node.date }}</dt><dd>post tag</dd>
+          <dt>{{ item.node.date }}</dt><dd>{{ item.node.fields.tags}}</dd>
         </dl>
         <g-image :src = "item.node.fields.image.src" />
         <p>{{ item.node.fields.description }}</p>
+        <g-link :to="item.node.path" class="continue-link">続きを読む ></g-link>
       </div>
     </div>
   </Layout>
@@ -27,6 +28,7 @@
           fields {
             description
             image
+            tags
           }
           path
         }
@@ -40,9 +42,22 @@
 </script>
 
 <style scoped>
+  .post {
+    margin-bottom: 10%;
+    margin-right: 10%; 
+  }
+
   h2 {
     border-bottom: inset 10px #01bbdd;
-    margin-right: 10%;
+  }
+
+  a { 
+    text-decoration: none;
+    color: #333333;
+  }
+
+  a:hover {
+    color: #cccccc;
   }
 
   dt{
@@ -54,6 +69,12 @@
   }
 
   img {
-    width: 85%;
+    width: 95%;
   }
+
+  .continue-link {
+    float: right;
+  }
+  
+
 </style>
