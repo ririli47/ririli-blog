@@ -9,7 +9,7 @@
         <dl>
           <dt>{{ item.node.date }}</dt><dd>post tag</dd>
         </dl>
-        <!-- <g-image :src = "item.node.image"/> -->
+        <g-image :src = "item.node.fields.image.src" />
         <p>{{ item.node.fields.description }}</p>
       </div>
     </div>
