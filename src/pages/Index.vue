@@ -70,6 +70,7 @@
 
   img {
     width: 95%;
+    height: auto;
   }
 
   .continue-link {
