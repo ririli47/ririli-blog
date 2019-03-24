@@ -10,9 +10,6 @@
         <dl>
           <dt>{{ item.node.date }}</dt><dd>{{ item.node.fields.tags }}</dd>
         </dl>
-        <g-link :to="item.node.path" class="continue-link">
-          <g-image :src = "item.node.fields.image.src" />
-        </g-link>
         <p>{{ item.node.fields.description }}</p>
         <g-link :to="item.node.path" class="continue-link">続きを読む ></g-link>
       </div>

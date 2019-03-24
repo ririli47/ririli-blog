@@ -59,7 +59,7 @@ body {
 }
 
 .header-background {
-  background: linear-gradient(135deg, #333333, #000000);
+  background: linear-gradient(135deg, #000000, #333333);
   /*background-color: #333333;*/
 }
 
