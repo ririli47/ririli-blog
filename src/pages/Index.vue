@@ -6,10 +6,13 @@
         <h2>
           <g-link :to="item.node.path">{{ item.node.title }}</g-link>
         </h2>
+        <div class="border"></div>
         <dl>
-          <dt>{{ item.node.date }}</dt><dd>{{ item.node.fields.tags}}</dd>
+          <dt>{{ item.node.date }}</dt><dd>{{ item.node.fields.tags }}</dd>
         </dl>
-        <g-image :src = "item.node.fields.image.src" />
+        <g-link :to="item.node.path" class="continue-link">
+          <g-image :src = "item.node.fields.image.src" />
+        </g-link>
         <p>{{ item.node.fields.description }}</p>
         <g-link :to="item.node.path" class="continue-link">続きを読む ></g-link>
       </div>
@@ -42,13 +45,31 @@
 </script>
 
 <style scoped>
+  @keyframes RightToLeft {
+    0% {
+      opacity: 0;/* 透明 */
+      transform: translateX(50px);/* X軸方向に50px */
+    }
+    100% {
+      opacity: 1;/* 不透明 */
+      transform: translateX(0);
+    }
+  }
+
+  .post {
+    animation-duration: 2s;/* アニメーション時間 */
+    animation-name: RightToLeft;/* アニメーション名 */
+    /*animation-iteration-count: infinite;/* アニメーションの繰り返し（無限）*/
+  }
+
   .post {
     margin-bottom: 10%;
     margin-right: 10%; 
   }
 
-  h2 {
-    border-bottom: inset 10px #01bbdd;
+  .border {
+    height: 20px;
+    background: linear-gradient(135deg, #01bbdd, #ffffff);
   }
 
   a { 

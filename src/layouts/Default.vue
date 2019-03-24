@@ -21,6 +21,7 @@
         <h1>About me</h1>
         <g-image src="../../assets/img/usapi.png" alt="usapi"/>
         <h2>Naoya Fukuhara</h2>
+        <div class="border"></div>
       </div>
     </main>
     <footer class="footer">
@@ -58,7 +59,8 @@ body {
 }
 
 .header-background {
-  background-color: #333333;
+  background: linear-gradient(135deg, #333333, #000000);
+  /*background-color: #333333;*/
 }
 
 .header-wrap {
@@ -98,6 +100,15 @@ img {
   width: 85%;
 }
 
+h2 {
+    margin-bottom: 0%;
+}
+
+.border {
+  height: 15px;
+  margin-right: 10%;
+  background: linear-gradient(135deg, #01bbdd, #ffffff);
+}
 
 @media screen and (max-width:1200px){
   .title-img {
